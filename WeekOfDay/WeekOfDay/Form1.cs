@@ -16,5 +16,11 @@ namespace WeekOfDay
         {
             InitializeComponent();
         }
+
+        // ウィンドウのデフォルト値
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            labelResult.Text = "";
+        }
     }
 }

@@ -122,6 +122,7 @@
             this.Controls.Add(this.labelAD);
             this.Name = "Form1";
             this.Text = "曜日算出";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDay)).EndInit();
             this.ResumeLayout(false);
