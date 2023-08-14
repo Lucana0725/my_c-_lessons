@@ -90,6 +90,7 @@
             this.numericUpDownMonth.Name = "numericUpDownMonth";
             this.numericUpDownMonth.Size = new System.Drawing.Size(60, 19);
             this.numericUpDownMonth.TabIndex = 5;
+            this.numericUpDownMonth.ValueChanged += new System.EventHandler(this.numericUpDownMonth_ValueChanged);
             // 
             // numericUpDownDay
             // 
@@ -97,6 +98,7 @@
             this.numericUpDownDay.Name = "numericUpDownDay";
             this.numericUpDownDay.Size = new System.Drawing.Size(60, 19);
             this.numericUpDownDay.TabIndex = 6;
+            this.numericUpDownDay.ValueChanged += new System.EventHandler(this.numericUpDownDay_ValueChanged);
             // 
             // buttonCalc
             // 
@@ -106,6 +108,7 @@
             this.buttonCalc.TabIndex = 7;
             this.buttonCalc.Text = "曜日算出";
             this.buttonCalc.UseVisualStyleBackColor = true;
+            this.buttonCalc.Click += new System.EventHandler(this.buttonCalc_Click);
             // 
             // Form1
             // 
