@@ -18,17 +18,29 @@ namespace ConsoleApplication1
 
             // 繰り返し処理
             // while文
+            //int n, sum = 0;
+
+            //Console.Write("整数値> ");
+            //n = int.Parse(Console.ReadLine());
+
+            //while (n > 0)
+            //{
+            //    sum += n;
+            //    Console.Write("整数値> ");
+            //    n = int.Parse(Console.ReadLine());
+            //}
+            //Console.WriteLine("合計値は{0}です", sum);
+
+            // do while文
             int n, sum = 0;
 
-            Console.Write("整数値> ");
-            n = int.Parse(Console.ReadLine());
-
-            while (n > 0)
+            do
             {
-                sum += n;
                 Console.Write("整数値> ");
                 n = int.Parse(Console.ReadLine());
-            }
+                sum += n;
+            } while (n > 0);
+
             Console.WriteLine("合計値は{0}です", sum);
 
 
