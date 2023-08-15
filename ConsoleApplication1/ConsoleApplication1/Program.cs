@@ -13,10 +13,30 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("これがコンソールアプリケーションです。");
+            string ending = "終了するには何かキーを押してください。";
+            //Console.WriteLine("これがコンソールアプリケーションです。");
 
-            Console.WriteLine("終了するには何かキーを押してください。");
-            Console.Read();
+            //Console.WriteLine("終了するには何かキーを押してください。");
+            //Console.Read();
+
+            //int a = 10;
+            //string s = "こんにちは";
+
+            //Console.Write(a);
+            //Console.WriteLine(s);
+            ////Console.WriteLine(s + "、aの値は" + a + "です。");
+            //Console.WriteLine("{0}、aの値は{1}です。", s, a);
+
+            Console.WriteLine("{0:C}", 1000);
+            Console.WriteLine("{0:X}", 250);
+            Console.WriteLine("{0:N}", 25000000);
+            Console.WriteLine("{0:F3}", 123.45678);
+            Console.WriteLine("{0:P}", 2.0/3.0);
+
+
+
+            Console.WriteLine(ending);
+            Console.ReadLine();
         }
     }
 }
