@@ -15,36 +15,60 @@ namespace ConsoleApplication1
         {
             //string ending = "終了するには何かキーを押してください。";
 
-
-            // 繰り返し処理
-            // while文
+            // break, continue句
             //int n, sum = 0;
-
-            //Console.Write("整数値> ");
-            //n = int.Parse(Console.ReadLine());
-
-            //while (n > 0)
+            //Console.WriteLine("整数値を10回入力してください。");
+            //Console.WriteLine("途中で負の数を入力したら終了します。");
+            //for (int i = 0; i < 10; i++)
             //{
-            //    sum += n;
-            //    Console.Write("整数値> ");
+            //    Console.Write("> ");
             //    n = int.Parse(Console.ReadLine());
+            //    if (n < 0)
+            //        break;
+
+            //    sum += n;
             //}
-            //Console.WriteLine("合計値は{0}です", sum);
+            //Console.WriteLine("合計値は{0}です。", sum);
 
-            // do while文
-            int n, sum = 0;
 
-            do
+            //int n, div = 1000;
+
+            //Console.WriteLine("整数値を5回入力してください。");
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Console.Write("> ");
+            //    n = int.Parse(Console.ReadLine());
+            //    if (n == 0)
+            //    {
+            //        Console.WriteLine("0では割れません。再入力してください。");
+            //        continue;
+            //    }
+            //    Console.Write("{0} / {1} = ", div, n);
+            //    div /= n;
+            //    Console.WriteLine(div);
+
+            // whileにて記述
+            int n, div = 1000;
+
+            Console.WriteLine("整数値を5回入力してください。");
+            
+            int i = 0;
+            while (i < 5)
             {
-                Console.Write("整数値> ");
+                Console.Write("> ");
                 n = int.Parse(Console.ReadLine());
-                sum += n;
-            } while (n > 0);
-
-            Console.WriteLine("合計値は{0}です", sum);
-
-
-
+                if (n == 0)
+                {
+                    Console.WriteLine("0では割れません。再入力してください。");
+                    continue;
+                }
+                Console.Write("{0} / {1} = ", div, n);
+                div /= n;
+                Console.WriteLine(div);
+                i++;
+            }
+            
+        
         }
     }
 }
