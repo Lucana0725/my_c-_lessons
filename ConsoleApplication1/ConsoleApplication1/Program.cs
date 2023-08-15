@@ -47,26 +47,44 @@ namespace ConsoleApplication1
             //    div /= n;
             //    Console.WriteLine(div);
 
-            // whileにて記述
-            int n, div = 1000;
+            //// whileにて記述
+            //int n, div = 1000;
 
-            Console.WriteLine("整数値を5回入力してください。");
-            
-            int i = 0;
-            while (i < 5)
+            //Console.WriteLine("整数値を5回入力してください。");
+
+            //int i = 0;
+            //while (i < 5)
+            //{
+            //    Console.Write("> ");
+            //    n = int.Parse(Console.ReadLine());
+            //    if (n == 0)
+            //    {
+            //        Console.WriteLine("0では割れません。再入力してください。");
+            //        continue;
+            //    }
+            //    Console.Write("{0} / {1} = ", div, n);
+            //    div /= n;
+            //    Console.WriteLine(div);
+            //    i++;
+            //}
+
+            // goto文
+            int i, j = 0, k = 0, no = 1;
+
+            for (i = 1; i <= 10; i++)
             {
-                Console.Write("> ");
-                n = int.Parse(Console.ReadLine());
-                if (n == 0)
+                for (j = 1; j <= 10; j++)
                 {
-                    Console.WriteLine("0では割れません。再入力してください。");
-                    continue;
+                    for (k = 1; k <= 10; k++)
+                    {
+                        no += (i + j + k);
+                        if (no >= 2000) goto OUT;
+                    }
                 }
-                Console.Write("{0} / {1} = ", div, n);
-                div /= n;
-                Console.WriteLine(div);
-                i++;
             }
+        OUT:
+            Console.WriteLine("i:{0} j:{1} k:{2} no:{3}", i, j, k, no);
+
             
         
         }
