@@ -13,7 +13,10 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("これがコンソールアプリケーションです。");
 
+            Console.WriteLine("終了するには何かキーを押してください。");
+            Console.Read();
         }
     }
 }
