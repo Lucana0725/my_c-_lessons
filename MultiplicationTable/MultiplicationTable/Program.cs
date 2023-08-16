@@ -73,12 +73,16 @@ class Program
 
         for (int i = 1; i <= 9; i++)
         {
-            Console.Write(i + " | ");
+            //Console.Write(i + "  |");
+            Console.Write(i + " |");
+
             for (int j = 1; j <= 9; j++)
             {
-                Console.Write(" " + j * i + " ");
+                //Console.Write(" " + j * i + " ");
+                Console.Write("{0, 3}", j * i);
             }
             Console.WriteLine();
         }
+        Console.Read();
     }
 }
