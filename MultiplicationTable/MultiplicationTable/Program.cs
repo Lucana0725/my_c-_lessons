@@ -61,12 +61,22 @@ class Program
         //    }
         //}
 
+        Console.WriteLine("   * * * 九九の表 * * *  ");
+        Console.Write("  |");
         for (int i = 1; i <= 9; i++)
         {
-            Console.Write(i + " ");
+            Console.Write("  " + i);
+        }
+        Console.WriteLine();
+        Console.WriteLine("---------------------------------");
+        //Console.WriteLine();
+
+        for (int i = 1; i <= 9; i++)
+        {
+            Console.Write(i + " | ");
             for (int j = 1; j <= 9; j++)
             {
-                Console.Write(" " + j * i);
+                Console.Write(" " + j * i + " ");
             }
             Console.WriteLine();
         }
