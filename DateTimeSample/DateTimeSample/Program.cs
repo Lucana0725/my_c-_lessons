@@ -35,6 +35,7 @@
 // こちらの記述でも可
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -45,7 +46,8 @@ namespace DateTimeSample
         static void Main(string[] args)
         {
             //dateTimePropertyExample();
-            dateTimeAddExample();
+            //dateTimeAddExample();
+            dateTimeToXxxxXxxxStringExample();
         }
 
         static void ending()
@@ -85,8 +87,24 @@ namespace DateTimeSample
 
             addSpan = new TimeSpan(1, 1, 1, 1);                // TimeSpan(日、時、分、秒)：要は現在時刻に10時間、10分、10秒を足した日時を出力する
 
+            answer = now.Add(addSpan);
+            Console.WriteLine(answer);
+
             //Console.WriteLine("Enterキーで終了");
             //Console.Read();
+            ending();
+        }
+
+        // 各書式での日時の出力方法
+        static void dateTimeToXxxxXxxxStringExample()
+        {
+            DateTime now = DateTime.Now;
+            Console.WriteLine(now);
+            Console.WriteLine(now.ToLongDateString());
+            Console.WriteLine(now.ToLongTimeString());
+            Console.WriteLine(now.ToShortDateString());
+            Console.WriteLine(now.ToShortTimeString());
+
             ending();
         }
 
