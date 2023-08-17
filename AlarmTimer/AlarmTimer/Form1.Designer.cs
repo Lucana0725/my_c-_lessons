@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelTime = new System.Windows.Forms.Label();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
             this.buttonSet = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // labelTime
@@ -88,6 +90,11 @@
             this.buttonReset.Text = "リセット";
             this.buttonReset.UseVisualStyleBackColor = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -114,6 +121,7 @@
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Button buttonSet;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
