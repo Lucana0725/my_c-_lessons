@@ -48,7 +48,18 @@ namespace AlarmTimer
         private void buttonSet_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();  // form2インスタンスを生成
-            form2.ShowDialog();  // form2用のダイアログを表示
+            //form2.ShowDialog();  // form2用のダイアログを表示
+            
+            // 設定ダイアログボックスの表示(上の1行を修正)
+            if (form2.ShowDialog() == DialogResult.OK)
+            {
+                // アラームの設定
+                alarmSetFlag = true;
+                alarmHour = form2.alarmHour;
+                alarmMinute = form2.alarmMinute;
+                alarmSecond = form2.alarmSecond;
+                labelStatus.Text = "♪ " + alarmHour.ToString("00") + ":" + alarmMinute.ToString("00") + ":" + alarmSecond.ToString("00");
+            }
             form2.Dispose();  // 不要になったform2を削除し、リソースの開放
         }
     }
