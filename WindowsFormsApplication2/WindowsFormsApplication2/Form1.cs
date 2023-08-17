@@ -29,8 +29,21 @@ namespace WindowsFormsApplication2
             this.button1.Location = new Point(100, 100);
             this.button1.Size = new Size(80, 20);
 
+            this.button1.Click += new EventHandler(button1_Click);
+
             this.Controls.Add(this.button1);
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+
+            if (form2.ShowDialog() == DialogResult.OK)
+            {
+                label1.Text = form2.feeling;
+            }
+            form2.Dispose();
         }
     }
 }
