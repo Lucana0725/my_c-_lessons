@@ -47,7 +47,8 @@ namespace DateTimeSample
         {
             //dateTimePropertyExample();
             //dateTimeAddExample();
-            dateTimeToXxxxXxxxStringExample();
+            //dateTimeToXxxxXxxxStringExample();
+            dateTimeToStringExample();
         }
 
         static void ending()
@@ -104,6 +105,22 @@ namespace DateTimeSample
             Console.WriteLine(now.ToLongTimeString());
             Console.WriteLine(now.ToShortDateString());
             Console.WriteLine(now.ToShortTimeString());
+
+            ending();
+        }
+
+
+        // ToString()メソッド
+        static void dateTimeToStringExample()
+        {
+            DateTime now = DateTime.Now;
+
+            Console.WriteLine(now.ToString());
+            Console.WriteLine("D = " + now.ToString("D"));
+            Console.WriteLine("T = " + now.ToString("T"));
+            Console.WriteLine("d = " + now.ToString("d"));
+            Console.WriteLine("t = " + now.ToString("t"));
+            Console.WriteLine("m = " + now.ToString("m"));
 
             ending();
         }
