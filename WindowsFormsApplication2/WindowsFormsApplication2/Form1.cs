@@ -56,5 +56,10 @@ namespace WindowsFormsApplication2
             }
             form2.Dispose();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label2.Text = DateTime.Now.ToString();
+        }
     }
 }
