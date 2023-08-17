@@ -22,5 +22,16 @@ namespace AlarmTimer
         {
             InitializeComponent();
         }
+
+
+
+        // ウィンドウの初期値
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            timer1.Start();  // タイマーを起動
+            labelStatus.Text = "";  // 起動後、1秒後ごとにTickイベントが発生
+            labelDate.Text = DateTime.Today.ToString("yyyy年MM月dd日 (ddd)");  // 現在の日付を西暦年月日と曜日の文字列に変換
+            labelTime.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }

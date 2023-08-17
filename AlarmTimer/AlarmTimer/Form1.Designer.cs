@@ -52,7 +52,7 @@
             // 
             this.labelDate.AutoSize = true;
             this.labelDate.ForeColor = System.Drawing.Color.White;
-            this.labelDate.Location = new System.Drawing.Point(41, 62);
+            this.labelDate.Location = new System.Drawing.Point(41, 68);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(123, 12);
             this.labelDate.TabIndex = 1;
@@ -109,6 +109,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "アラーム&タイマー";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
