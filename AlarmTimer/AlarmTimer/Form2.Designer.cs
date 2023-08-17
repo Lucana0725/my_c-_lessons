@@ -208,6 +208,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form2";
             this.Text = "設定";
+            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAlmHour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAlmMnt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimMnt)).EndInit();
