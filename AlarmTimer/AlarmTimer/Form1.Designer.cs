@@ -78,6 +78,7 @@
             this.buttonSet.TabIndex = 3;
             this.buttonSet.Text = "設定";
             this.buttonSet.UseVisualStyleBackColor = false;
+            this.buttonSet.Click += new System.EventHandler(this.buttonSet_Click);
             // 
             // buttonReset
             // 
@@ -101,7 +102,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(327, 200);
+            this.ClientSize = new System.Drawing.Size(254, 185);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonSet);
             this.Controls.Add(this.labelStatus);

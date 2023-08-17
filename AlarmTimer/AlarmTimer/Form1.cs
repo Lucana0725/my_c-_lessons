@@ -42,5 +42,14 @@ namespace AlarmTimer
             labelTime.Text = now.ToLongTimeString();  // 現在の時刻をlabelTimeに表示(ToLongString()形式で。)
             labelDate.Text = DateTime.Today.ToString("yyyy年MM月dd日 (ddd)");  // 本日の日付をlabelDateに表示(yyyy年MM月dd日 (ddd)の形式で。)
         }
+
+
+        // 設定ボタンのイベントハンドラ
+        private void buttonSet_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();  // form2インスタンスを生成
+            form2.ShowDialog();  // form2用のダイアログを表示
+            form2.Dispose();  // 不要になったform2を削除し、リソースの開放
+        }
     }
 }
