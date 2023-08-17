@@ -41,6 +41,18 @@ namespace AlarmTimer
             DateTime now = DateTime.Now;  // 現在の時刻を取得
             labelTime.Text = now.ToLongTimeString();  // 現在の時刻をlabelTimeに表示(ToLongString()形式で。)
             labelDate.Text = DateTime.Today.ToString("yyyy年MM月dd日 (ddd)");  // 本日の日付をlabelDateに表示(yyyy年MM月dd日 (ddd)の形式で。)
+
+            // アラーム設定中
+            if (alarmSetFlag == true)
+            {
+                // 設定時間になった
+                if (alarmHour == now.Hour && alarmMinute == now.Minute && alarmSecond == now.Second)
+                {
+                    alarmSetFlag = false;
+                    MessageBox.Show("時間ですよ！", "アラーム", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    labelStatus.Text = "";
+                }
+            }
         }
 
 
