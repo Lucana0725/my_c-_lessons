@@ -31,8 +31,19 @@ namespace WindowsFormsApplication2
 
             this.button1.Click += new EventHandler(button1_Click);
 
+
+            // メッセージボックス例
+            DialogResult result = MessageBox.Show("削除してもよろしいですか？", "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                // はいのときの処理
+            } else
+            {
+                // いいえのときの処理
+            }
+
             this.Controls.Add(this.button1);
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
