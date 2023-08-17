@@ -93,6 +93,7 @@
             this.numericUpDownAlmHour.Size = new System.Drawing.Size(75, 19);
             this.numericUpDownAlmHour.TabIndex = 3;
             this.numericUpDownAlmHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDownAlmHour.ValueChanged += new System.EventHandler(this.numericUpDownAlm_ValueChanged);
             // 
             // label2
             // 
@@ -153,6 +154,7 @@
             this.numericUpDownTimMnt.Size = new System.Drawing.Size(75, 19);
             this.numericUpDownTimMnt.TabIndex = 8;
             this.numericUpDownTimMnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDownTimMnt.ValueChanged += new System.EventHandler(this.numericUpDownTim_ValueChanged);
             // 
             // numericUpDownTimSec
             // 

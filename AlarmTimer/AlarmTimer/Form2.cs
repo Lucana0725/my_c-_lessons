@@ -25,5 +25,18 @@ namespace AlarmTimer
             numericUpDownAlmHour.Value = DateTime.Now.Hour;
             numericUpDownAlmMnt.Value = DateTime.Now.Minute;
         }
+
+        // 「アラーム」のValueChangedイベントハンドラ
+        private void numericUpDownAlm_ValueChanged(object sender, EventArgs e)
+        {
+            radioButtonAlarm.Checked = true;  // アラームの「時」の値が変更されるとラジオボタンもアラームに切り替わる
+        }
+
+
+        // 「タイマー」のValueChangedイベントハンドラ
+        private void numericUpDownTim_ValueChanged(object sender, EventArgs e)
+        {
+            radioButtonTimer.Checked = true;
+        }
     }
 }
