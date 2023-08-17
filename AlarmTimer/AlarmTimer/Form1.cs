@@ -74,5 +74,13 @@ namespace AlarmTimer
             }
             form2.Dispose();  // 不要になったform2を削除し、リソースの開放
         }
+
+
+        // リセットボタンを押したときのイベントハンドラ
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            alarmSetFlag = false;
+            labelStatus.Text = "";
+        }
     }
 }

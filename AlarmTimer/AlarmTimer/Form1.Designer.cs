@@ -90,6 +90,7 @@
             this.buttonReset.TabIndex = 4;
             this.buttonReset.Text = "リセット";
             this.buttonReset.UseVisualStyleBackColor = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // timer1
             // 
