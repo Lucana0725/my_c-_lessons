@@ -28,5 +28,14 @@ namespace MultiAlarm
         {
 
         }
+
+
+        // 設定ウィンドウのOKボタンクリック時のイベントハンドラ
+        private void buttonOK_Click(object sender, EventArgs e)
+        {
+            alarmHour = (int)numericUpDownHour.Value;  // 時 のニューメリックの値をalarmHourにセット
+            alarmMinute = (int)numericUpDownMinute.Value;  // 分 同上
+            alarmSecond = 0;  // その時分になった瞬間にアラームを出したいので秒は0
+        }
     }
 }

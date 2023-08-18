@@ -30,12 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownHour = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMinute = new System.Windows.Forms.NumericUpDown();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinute)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,29 +56,29 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "分";
             // 
-            // numericUpDown1
+            // numericUpDownHour
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(58, 27);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numericUpDownHour.Location = new System.Drawing.Point(58, 27);
+            this.numericUpDownHour.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(72, 19);
-            this.numericUpDown1.TabIndex = 2;
+            this.numericUpDownHour.Name = "numericUpDownHour";
+            this.numericUpDownHour.Size = new System.Drawing.Size(72, 19);
+            this.numericUpDownHour.TabIndex = 2;
             // 
-            // numericUpDown2
+            // numericUpDownMinute
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(58, 81);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.numericUpDownMinute.Location = new System.Drawing.Point(58, 81);
+            this.numericUpDownMinute.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(72, 19);
-            this.numericUpDown2.TabIndex = 3;
+            this.numericUpDownMinute.Name = "numericUpDownMinute";
+            this.numericUpDownMinute.Size = new System.Drawing.Size(72, 19);
+            this.numericUpDownMinute.TabIndex = 3;
             // 
             // buttonOK
             // 
@@ -89,6 +89,7 @@
             this.buttonOK.TabIndex = 4;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // buttonCancel
             // 
@@ -108,16 +109,16 @@
             this.ClientSize = new System.Drawing.Size(168, 205);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numericUpDownMinute);
+            this.Controls.Add(this.numericUpDownHour);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form2";
             this.Text = "時刻設定";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinute)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,8 +128,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDownHour;
+        private System.Windows.Forms.NumericUpDown numericUpDownMinute;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
     }
