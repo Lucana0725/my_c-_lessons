@@ -37,6 +37,17 @@ namespace MultiAlarm
         {
             DateTime now = DateTime.Now;  // DateTime型のnowという変数で現在日時を取得。
             labelTime.Text = now.ToLongTimeString();  // nowの時刻(長い表記バージョン)をlabelTimeのテキストに。
+
+            // アラームがセットされているときの処理
+            if (alarmSetFlag == true)
+            {
+                // 設定時刻になった場合
+                if (alarmHour == now.Hour && alarmMinute == now.Minute && alarmSecond == now.Second)
+                {
+                    alarmSetFlag = false;
+                    MessageBox.Show("時間ですよ！", "アラーム", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
 
