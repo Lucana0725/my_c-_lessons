@@ -13,10 +13,18 @@ namespace MultiAlarm
     public partial class Form1 : Form
     {
         // 各種フィールド
-        private bool alarmSetFlag = false;  // アラームをセットしているかどうかの判定フラグ
-        private int alarmHour = 0;            // アラーム時
-        private int alarmMinute = 0;         // アラーム分
-        private int alarmSecond = 0;        // アラーム秒
+        //private bool alarmSetFlag = false;  // アラームをセットしているかどうかの判定フラグ
+        private int alarm1Hour = 0;            // アラーム1 時
+        private int alarm1Minute = 0;         // アラーム1 分
+        private int alarm1Second = 0;        // アラーム1 秒
+        
+        private int alarm2Hour = 0;            // アラーム2 時
+        private int alarm2Minute = 0;         // アラーム2 分
+        private int alarm2Second = 0;        // アラーム2 秒
+
+        private int alarm3Hour = 0;            // アラーム3 時
+        private int alarm3Minute = 0;         // アラーム3 分
+        private int alarm3Second = 0;        // アラーム3 秒
 
         public Form1()
         {
@@ -38,16 +46,27 @@ namespace MultiAlarm
             DateTime now = DateTime.Now;  // DateTime型のnowという変数で現在日時を取得。
             labelTime.Text = now.ToLongTimeString();  // nowの時刻(長い表記バージョン)をlabelTimeのテキストに。
 
-            // アラームがセットされているときの処理
-            if (alarmSetFlag == true)
+            //// アラームがセットされているときの処理
+            //if (alarmSetFlag == true)
+            //{
+            //    // 設定時刻になった場合
+            //    if (alarmHour == now.Hour && alarmMinute == now.Minute && alarmSecond == now.Second)
+            //    {
+            //        alarmSetFlag = false;
+            //        MessageBox.Show("時間ですよ！", "アラーム", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //}
+
+            // アラーム1がセットされているときの処理
+            if (checkBoxTimer1.Checked == true)
             {
-                // 設定時刻になった場合
-                if (alarmHour == now.Hour && alarmMinute == now.Minute && alarmSecond == now.Second)
+                if (alarm1Hour == now.Hour && alarm1Minute == now.Minute && alarm1Second == now.Second)
                 {
-                    alarmSetFlag = false;
-                    MessageBox.Show("時間ですよ！", "アラーム", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    checkBoxTimer1.Checked = false;
+                    MessageBox.Show("時間ですよ！", "アラーム1", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+
         }
 
 
@@ -61,11 +80,11 @@ namespace MultiAlarm
             if (form2.ShowDialog() == DialogResult.OK)
             {
                 // アラームの設定
-                alarmSetFlag = true;  // アラームをセットしたのでフラグをtrueに。
-                alarmHour = form2.alarmHour;
-                alarmMinute = form2.alarmMinute;
-                alarmSecond = form2.alarmSecond;
-                checkBoxTimer1.Text = alarmHour.ToString("00") + ":" + alarmMinute.ToString("00");
+                //alarmSetFlag = true;  // アラームをセットしたのでフラグをtrueに。
+                alarm1Hour = form2.alarmHour;
+                alarm1Minute = form2.alarmMinute;
+                alarm1Second = form2.alarmSecond;
+                checkBoxTimer1.Text = alarm1Hour.ToString("00") + ":" + alarm1Minute.ToString("00");
                 checkBoxTimer1.Checked = true;
             }
             form2.Dispose();
