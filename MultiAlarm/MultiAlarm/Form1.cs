@@ -32,5 +32,14 @@ namespace MultiAlarm
             DateTime now = DateTime.Now;  // DateTime型のnowという変数で現在日時を取得。
             labelTime.Text = now.ToLongTimeString();  // nowの時刻(長い表記バージョン)をlabelTimeのテキストに。
         }
+
+
+        // ボタン1クリック時のイベントハンドラ
+        private void buttonSet1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();  // 設定ウィンドウのインスタンス作成
+            form2.ShowDialog();
+            form2.Dispose();
+        }
     }
 }

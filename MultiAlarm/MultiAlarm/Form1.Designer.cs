@@ -33,9 +33,9 @@
             this.checkBoxTimer1 = new System.Windows.Forms.CheckBox();
             this.checkBoxTimer2 = new System.Windows.Forms.CheckBox();
             this.checkBoxTimer3 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonSet1 = new System.Windows.Forms.Button();
+            this.buttonSet2 = new System.Windows.Forms.Button();
+            this.buttonSet3 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -86,38 +86,39 @@
             this.checkBoxTimer3.Text = "00:00";
             this.checkBoxTimer3.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonSet1
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumBlue;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(129, 75);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "設定";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonSet1.BackColor = System.Drawing.Color.MediumBlue;
+            this.buttonSet1.ForeColor = System.Drawing.Color.White;
+            this.buttonSet1.Location = new System.Drawing.Point(129, 75);
+            this.buttonSet1.Name = "buttonSet1";
+            this.buttonSet1.Size = new System.Drawing.Size(75, 23);
+            this.buttonSet1.TabIndex = 4;
+            this.buttonSet1.Text = "設定";
+            this.buttonSet1.UseVisualStyleBackColor = false;
+            this.buttonSet1.Click += new System.EventHandler(this.buttonSet1_Click);
             // 
-            // button2
+            // buttonSet2
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumBlue;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(129, 114);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "設定";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonSet2.BackColor = System.Drawing.Color.MediumBlue;
+            this.buttonSet2.ForeColor = System.Drawing.Color.White;
+            this.buttonSet2.Location = new System.Drawing.Point(129, 114);
+            this.buttonSet2.Name = "buttonSet2";
+            this.buttonSet2.Size = new System.Drawing.Size(75, 23);
+            this.buttonSet2.TabIndex = 5;
+            this.buttonSet2.Text = "設定";
+            this.buttonSet2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // buttonSet3
             // 
-            this.button3.BackColor = System.Drawing.Color.MediumBlue;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(129, 155);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "設定";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonSet3.BackColor = System.Drawing.Color.MediumBlue;
+            this.buttonSet3.ForeColor = System.Drawing.Color.White;
+            this.buttonSet3.Location = new System.Drawing.Point(129, 155);
+            this.buttonSet3.Name = "buttonSet3";
+            this.buttonSet3.Size = new System.Drawing.Size(75, 23);
+            this.buttonSet3.TabIndex = 6;
+            this.buttonSet3.Text = "設定";
+            this.buttonSet3.UseVisualStyleBackColor = false;
             // 
             // timer1
             // 
@@ -131,9 +132,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(238, 212);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonSet3);
+            this.Controls.Add(this.buttonSet2);
+            this.Controls.Add(this.buttonSet1);
             this.Controls.Add(this.checkBoxTimer3);
             this.Controls.Add(this.checkBoxTimer2);
             this.Controls.Add(this.checkBoxTimer1);
@@ -153,9 +154,9 @@
         private System.Windows.Forms.CheckBox checkBoxTimer1;
         private System.Windows.Forms.CheckBox checkBoxTimer2;
         private System.Windows.Forms.CheckBox checkBoxTimer3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonSet1;
+        private System.Windows.Forms.Button buttonSet2;
+        private System.Windows.Forms.Button buttonSet3;
         private System.Windows.Forms.Timer timer1;
     }
 }
