@@ -16,5 +16,12 @@ namespace MultiAlarm
         {
             InitializeComponent();
         }
+
+
+        // ウィンドウ起動時のイベントハンドラ
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            labelTime.Text = DateTime.Now.ToLongTimeString();  // labelTimeに現在時刻を表示する
+        }
     }
 }

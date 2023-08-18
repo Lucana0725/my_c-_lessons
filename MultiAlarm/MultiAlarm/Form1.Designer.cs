@@ -42,7 +42,7 @@
             this.labelTime.AutoSize = true;
             this.labelTime.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelTime.ForeColor = System.Drawing.Color.Yellow;
-            this.labelTime.Location = new System.Drawing.Point(68, 18);
+            this.labelTime.Location = new System.Drawing.Point(48, 18);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(98, 33);
             this.labelTime.TabIndex = 0;
@@ -133,6 +133,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "アラーム";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
