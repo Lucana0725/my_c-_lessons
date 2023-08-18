@@ -12,9 +12,21 @@ namespace MultiAlarm
 {
     public partial class Form2 : Form
     {
+        // 各種フィールド
+        internal int alarmHour = 0;      // アラーム時
+        internal int alarmMinute = 0;   // アラーム分
+        internal int alarmSecond = 0;  // アラーム秒
+
         public Form2()
         {
             InitializeComponent();
+        }
+
+
+        // 設定ウィンドウの初期値ハンドラ
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
