@@ -67,10 +67,30 @@ namespace MultiAlarm
                 }
             }
 
+            // アラーム2がセットされているときの処理
+            if (checkBoxTimer2.Checked == true)
+            {
+                if (alarm2Hour == now.Hour && alarm2Minute == now.Minute && alarm2Second == now.Second)
+                {
+                    checkBoxTimer2.Checked = false;
+                    MessageBox.Show("時間ですよ！", "アラーム1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            // アラーム3がセットされているときの処理
+            if (checkBoxTimer3.Checked == true)
+            {
+                if (alarm3Hour == now.Hour && alarm3Minute == now.Minute && alarm3Second == now.Second)
+                {
+                    checkBoxTimer3.Checked = false;
+                    MessageBox.Show("時間ですよ！", "アラーム1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
         }
 
 
-        // ボタン1クリック時のイベントハンドラ
+        // 設定ボタン1クリック時のイベントハンドラ
         private void buttonSet1_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();  // 設定ウィンドウのインスタンス作成
@@ -86,6 +106,44 @@ namespace MultiAlarm
                 alarm1Second = form2.alarmSecond;
                 checkBoxTimer1.Text = alarm1Hour.ToString("00") + ":" + alarm1Minute.ToString("00");
                 checkBoxTimer1.Checked = true;
+            }
+            form2.Dispose();
+        }
+
+        // 設定ボタン2クリック時のイベントハンドラ
+        private void buttonSet2_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();  // 設定ウィンドウのインスタンス作成
+
+            // 設定ウィンドウがOKで閉じられた場合の処理
+            if (form2.ShowDialog() == DialogResult.OK)
+            {
+                // アラームの設定
+                //alarmSetFlag = true;  // アラームをセットしたのでフラグをtrueに。
+                alarm2Hour = form2.alarmHour;
+                alarm2Minute = form2.alarmMinute;
+                alarm2Second = form2.alarmSecond;
+                checkBoxTimer2.Text = alarm2Hour.ToString("00") + ":" + alarm2Minute.ToString("00");
+                checkBoxTimer2.Checked = true;
+            }
+            form2.Dispose();
+        }
+
+        // 設定ボタン2クリック時のイベントハンドラ
+        private void buttonSet3_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();  // 設定ウィンドウのインスタンス作成
+
+            // 設定ウィンドウがOKで閉じられた場合の処理
+            if (form2.ShowDialog() == DialogResult.OK)
+            {
+                // アラームの設定
+                //alarmSetFlag = true;  // アラームをセットしたのでフラグをtrueに。
+                alarm3Hour = form2.alarmHour;
+                alarm3Minute = form2.alarmMinute;
+                alarm3Second = form2.alarmSecond;
+                checkBoxTimer3.Text = alarm3Hour.ToString("00") + ":" + alarm3Minute.ToString("00");
+                checkBoxTimer3.Checked = true;
             }
             form2.Dispose();
         }

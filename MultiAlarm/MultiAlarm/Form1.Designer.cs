@@ -108,6 +108,7 @@
             this.buttonSet2.TabIndex = 5;
             this.buttonSet2.Text = "設定";
             this.buttonSet2.UseVisualStyleBackColor = false;
+            this.buttonSet2.Click += new System.EventHandler(this.buttonSet2_Click);
             // 
             // buttonSet3
             // 
@@ -119,6 +120,7 @@
             this.buttonSet3.TabIndex = 6;
             this.buttonSet3.Text = "設定";
             this.buttonSet3.UseVisualStyleBackColor = false;
+            this.buttonSet3.Click += new System.EventHandler(this.buttonSet3_Click);
             // 
             // timer1
             // 
