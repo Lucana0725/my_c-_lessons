@@ -14,5 +14,32 @@ namespace ClassSample
         public int volume;                       // 現在の音量
         public const int channelMin = 1;    // チャンネルの下限
         public const int channelMax = 12;  // チャンネルの上限
+
+
+
+        // メソッド
+
+        // テレビの電源をON / OFFする
+        public void OnOff()
+        {
+            if (power)
+            {
+                power = false;
+            }
+            else
+            {
+                power = true;
+            }
+        }
+
+
+        // チャンネルを設定する
+        public void SetChanel(int c)
+        {
+            if (c >= channelMin && c <= channelMax)
+            {
+                channel = c;
+            }
+        }
     }
 }
