@@ -14,6 +14,8 @@ namespace ClassSample
         public int volume;                       // 現在の音量
         public const int channelMin = 1;    // チャンネルの下限
         public const int channelMax = 12;  // チャンネルの上限
+        public const int volumeMin = 0;     // 音量下限
+        public const int volumeMax = 40;  // 音量上限
 
 
 
@@ -39,6 +41,44 @@ namespace ClassSample
             if (c >= channelMin && c <= channelMax)
             {
                 channel = c;
+            }
+        }
+
+
+        // チャンネルをプラス1する
+        public void ChannelUp()
+        {
+            if (channel < channelMax)
+            {
+                channel++;
+            }
+        }
+
+        // チャンネルをマイナス1する
+        public void ChannelDown()
+        {
+            if (channel > channelMin)
+            {
+                channel--;
+            }
+        }
+
+
+        // 音量をプラス1する
+        public void VolumeUp()
+        {
+            if (volume < volumeMax)
+            {
+                volume++;
+            }
+        }
+
+        // 音量をマイナス1する
+        public void VolumeDown()
+        {
+            if (volume > volumeMin)
+            {
+                volume--;
             }
         }
     }
