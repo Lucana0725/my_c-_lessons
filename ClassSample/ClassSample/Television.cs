@@ -9,13 +9,50 @@ namespace ClassSample
     internal class Television
     {
         // メンバー
-        public bool power;                      // 電源の状態
-        public int channel;                      // 現在のチャンネル
-        public int volume;                       // 現在の音量
-        public const int channelMin = 1;    // チャンネルの下限
-        public const int channelMax = 12;  // チャンネルの上限
-        public const int volumeMin = 0;     // 音量下限
-        public const int volumeMax = 40;  // 音量上限
+        private bool power;                      // 電源の状態
+        private int channel;                      // 現在のチャンネル
+        private int volume;                       // 現在の音量
+        private const int channelMin = 1;    // チャンネルの下限
+        private const int channelMax = 12;  // チャンネルの上限
+        private const int volumeMin = 0;     // 音量下限
+        private const int volumeMax = 40;  // 音量上限
+
+
+
+        // プロパティ
+        
+        // 電源のプロパティ
+        public bool Power
+        {
+            get { return power; }
+            //set { power = value; }  // 外からセットしないのでPowerは読み取り専用プロパティに。
+        }
+
+        // チャンネルのプロパティ
+        public int Channel
+        {
+            get { return channel; }
+            set
+            {
+                if (value >= channelMin && value <= channelMax)
+                {
+                    channel = value;
+                }
+            }
+        }
+
+        // ボリュームのプロパティ
+        public int Volume
+        {
+            get { return volume; }
+            //set  // 外からセットしないのでVolumeは読み取り専用プロパティに。
+            //{
+            //    if (volume >= volumeMin && volume <= volumeMax)
+            //    {
+            //        volume = value;
+            //    }
+            //}
+        }
 
 
 
@@ -35,14 +72,14 @@ namespace ClassSample
         }
 
 
-        // チャンネルを設定する
-        public void SetChanel(int c)
-        {
-            if (c >= channelMin && c <= channelMax)
-            {
-                channel = c;
-            }
-        }
+        // チャンネルを設定する  <= プロパティを定義したから不要に。
+        //public void SetChanel(int c)
+        //{
+        //    if (c >= channelMin && c <= channelMax)
+        //    {
+        //        channel = c;
+        //    }
+        //}
 
 
         // チャンネルをプラス1する

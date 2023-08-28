@@ -17,17 +17,18 @@ class Program
         Television tv = new Television();
 
         Console.WriteLine("10チャンネルを設定します。");
-        tv.SetChanel(10);
-        Console.WriteLine("TVは{0}チャンネルです。", tv.channel);
+        //tv.SetChanel(10);
+        tv.Channel = 10;
+        Console.WriteLine("TVは{0}チャンネルです。", tv.Channel);
 
         Console.WriteLine("チャンネルを+2します。");
         tv.ChannelUp();
         tv.ChannelUp();
-        Console.WriteLine("TVは{0}チャンネルです。", tv.channel);
+        Console.WriteLine("TVは{0}チャンネルです。", tv.Channel);
 
         Console.WriteLine("チャンネルを-1します。");
         tv.ChannelDown();
-        Console.WriteLine("TVは{0}チャンネルです。", tv.channel);
+        Console.WriteLine("TVは{0}チャンネルです。", tv.Channel);
 
         Console.WriteLine("終了するにはEnterキーを押して下さい。");
         Console.Read();
