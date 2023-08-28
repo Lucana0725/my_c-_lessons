@@ -8,10 +8,10 @@ namespace ClassSample
 {
     internal class Television
     {
-        // メンバー
-        private bool power;                      // 電源の状態
+        // フィールド
+        //private bool power;                      // 電源の状態  自動実装プロパティを定義したのでフィールドも不要に。
         private int channel;                      // 現在のチャンネル
-        private int volume;                       // 現在の音量
+        //private int volume;                       // 現在の音量  自動実装プロパティを定義したのでフィールドも不要に。
         private const int channelMin = 1;    // チャンネルの下限
         private const int channelMax = 12;  // チャンネルの上限
         private const int volumeMin = 0;     // 音量下限
@@ -21,12 +21,16 @@ namespace ClassSample
 
         // プロパティ
         
-        // 電源のプロパティ
-        public bool Power
-        {
-            get { return power; }
-            //set { power = value; }  // 外からセットしないのでPowerは読み取り専用プロパティに。
-        }
+        // 電源のプロパティ  // 自動実装プロパティを定義したので不要に。
+        //public bool Power
+        //{
+        //    get { return power; }
+        //}
+
+        // 自動実装プロパティ
+        public bool Power { get; private set; }
+
+        public int Volume { get; private set; }
 
         // チャンネルのプロパティ
         public int Channel
@@ -41,18 +45,11 @@ namespace ClassSample
             }
         }
 
-        // ボリュームのプロパティ
-        public int Volume
-        {
-            get { return volume; }
-            //set  // 外からセットしないのでVolumeは読み取り専用プロパティに。
-            //{
-            //    if (volume >= volumeMin && volume <= volumeMax)
-            //    {
-            //        volume = value;
-            //    }
-            //}
-        }
+        //// ボリュームのプロパティ  // 自動実装プロパティを定義したので不要に。
+        //public int Volume
+        //{
+        //    get { return volume; }
+        //}
 
 
 
@@ -61,13 +58,13 @@ namespace ClassSample
         // テレビの電源をON / OFFする
         public void OnOff()
         {
-            if (power)
+            if (Power)  // フィールドのpowerを削除したので、プロパティのPowerを使用する。
             {
-                power = false;
+                Power = false;
             }
             else
             {
-                power = true;
+                Power = true;
             }
         }
 
@@ -104,18 +101,18 @@ namespace ClassSample
         // 音量をプラス1する
         public void VolumeUp()
         {
-            if (volume < volumeMax)
+            if (Volume < volumeMax)  // フィールドのvolumeを削除したので、プロパティのVolumeを使用。
             {
-                volume++;
+                Volume++;
             }
         }
 
         // 音量をマイナス1する
         public void VolumeDown()
         {
-            if (volume > volumeMin)
+            if (Volume > volumeMin)
             {
-                volume--;
+                Volume--;
             }
         }
     }
