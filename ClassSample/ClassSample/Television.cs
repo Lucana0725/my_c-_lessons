@@ -18,15 +18,34 @@ namespace ClassSample
         private const int volumeMax = 40;  // 音量上限
 
 
+        // コンストラクタ
+        public Television()
+        {
+            Console.WriteLine("引数のないコンストラクタの呼び出し");
+            Power = false;
+            Channel = 1;
+            Volume = 20;
+        }
+
+        public Television(int channel, int volume)
+        {
+            Console.WriteLine("引数が2個のコンストラクタの呼び出し");
+            Power = false;
+            Channel = channel;
+            Volume = volume;
+        }
+
+        public Television(bool power, int channel, int volume)
+        {
+            Console.WriteLine("引数が3つのコンストラクタの呼び出し");
+            Power = power;
+            Channel = channel;
+            Volume = volume;
+        }
+
+
 
         // プロパティ
-        
-        // 電源のプロパティ  // 自動実装プロパティを定義したので不要に。
-        //public bool Power
-        //{
-        //    get { return power; }
-        //}
-
         // 自動実装プロパティ
         public bool Power { get; private set; }
 
@@ -45,11 +64,6 @@ namespace ClassSample
             }
         }
 
-        //// ボリュームのプロパティ  // 自動実装プロパティを定義したので不要に。
-        //public int Volume
-        //{
-        //    get { return volume; }
-        //}
 
 
 
@@ -68,15 +82,6 @@ namespace ClassSample
             }
         }
 
-
-        // チャンネルを設定する  <= プロパティを定義したから不要に。
-        //public void SetChanel(int c)
-        //{
-        //    if (c >= channelMin && c <= channelMax)
-        //    {
-        //        channel = c;
-        //    }
-        //}
 
 
         // チャンネルをプラス1する
