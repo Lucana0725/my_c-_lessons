@@ -48,6 +48,22 @@ namespace GradeCheck2
             labelAverageP.Text = subjectP.Average.ToString();
             labelAverageE.Text = subjectE.Average.ToString();
 
+
+            labelClear();
+        }
+
+
+
+        // 結果を表示するラベルのクリア
+        private void labelClear()
+        {
+            labelName.Text = "";
+            labelResultM.Text = "";
+            labelResultP.Text = "";
+            labelResultE.Text = "";
+            labelCompAvgM.Text = "";
+            labelCompAvgP.Text = "";
+            labelCompAvgE.Text = "";
         }
     }
 }
