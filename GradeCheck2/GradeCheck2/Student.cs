@@ -20,9 +20,9 @@ namespace GradeCheck2
 
 
         // コンストラクタ
-        public Student(string Name, int scoreM, int scoreP, int scoreE, int attendanceM, int attendanceP, int attendanceE)
+        public Student(string name, int scoreM, int scoreP, int scoreE, int attendanceM, int attendanceP, int attendanceE)
         {
-            Name = Name;
+            Name = name;
             ScoreM = scoreM;
             ScoreP = scoreP;
             ScoreE = scoreE;
