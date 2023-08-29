@@ -20,7 +20,17 @@ namespace GradeCheck2
 
 
         // コンストラクタ
-        // ここに定義予定
+        public Student(string Name, int scoreM, int scoreP, int scoreE, int attendanceM, int attendanceP, int attendanceE)
+        {
+            Name = Name;
+            ScoreM = scoreM;
+            ScoreP = scoreP;
+            ScoreE = scoreE;
+            AttendanceM = attendanceM;
+            AttendanceP = attendanceP;
+            AttendanceE = attendanceE;
+        }
+
 
 
 
