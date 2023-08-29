@@ -25,7 +25,52 @@ namespace GradeCheck2
 
 
         // プロパティ
-        // ここに定義予定
+        
+        // 学生名
+         public string Name { get; set; }
+
+        // 数学の得点
+        public int ScoreM
+        {
+            get { return scoreM; }
+            set { scoreM = scoreCheck(value); }
+        }
+
+        // 物理の得点
+        public int ScoreP
+        {
+            get { return scoreP; }
+            set { scoreP = scoreCheck(value); }
+        }
+
+        // 英語の得点
+        public int ScoreE
+        {
+            get { return scoreE; }
+            set { scoreE = scoreCheck(value); }
+        }
+
+        // 数学の出席時数
+        public int AttendanceM
+        {
+            get { return attendanceM; }
+            set { attendanceM = attendanceCheck(value); }
+        }
+
+        // 物理の出席時数
+        public int AttendanceP
+        {
+            get { return attendanceP; }
+            set { attendanceP = attendanceCheck(value); }
+        }
+
+        // 英語の出席時数
+        public int AttendanceE
+        {
+            get { return attendanceE; }
+            set { attendanceE = attendanceCheck(value); }
+        }
+
 
 
 
