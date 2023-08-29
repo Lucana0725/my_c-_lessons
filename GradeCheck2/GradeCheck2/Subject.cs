@@ -16,7 +16,13 @@ namespace GradeCheck2
 
 
         // ---コンストラクタ---
-        // ここに定義予定
+        public Subject(string name, double average, int totalHours, int passScore)
+        {
+            Name = name;
+            Average = average;
+            TotalHours = totalHours;
+            PassScore = passScore;
+        }
 
 
 
