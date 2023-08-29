@@ -29,6 +29,25 @@ namespace GradeCheck2
             subjectM = new Subject("数学", 70, 80, 60);
             subjectP = new Subject("物理", 65, 50, 50);
             subjectE = new Subject("英語", 77, 100, 70);
+
+
+            // 各科目の総時数の表示
+            labelTotalM.Text = "/ " + subjectM.TotalHours.ToString();
+            labelTotalP.Text = "/ " + subjectP.TotalHours.ToString();
+            labelTotalE.Text = "/ " + subjectE.TotalHours.ToString();
+
+
+            // 各科目の合格点の表示
+            labelPassScoreM.Text = subjectM.PassScore.ToString();
+            labelPassScoreP.Text = subjectP.PassScore.ToString();
+            labelPassScoreE.Text = subjectE.PassScore.ToString();
+
+
+            // 各科目の平均点の表示
+            labelAverageM.Text = subjectM.Average.ToString();
+            labelAverageP.Text = subjectP.Average.ToString();
+            labelAverageE.Text = subjectE.Average.ToString();
+
         }
     }
 }
