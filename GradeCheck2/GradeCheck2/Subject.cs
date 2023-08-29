@@ -44,6 +44,43 @@ namespace GradeCheck2
             }
         }
 
+        // 総合時数
+        public int TotalHours
+        {
+            get { return totalHours; }
+            set
+            {
+                if (value >= 0.0)
+                {
+                    totalHours = value;
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("総合時数の入力が正しくありません。", "確認");
+                    totalHours = 0;
+                }
+            }
+        }
+
+        // 合格点
+        public int PassScore
+        {
+            get { return passScore; }
+            set
+            {
+                if (value >= 0 && value <= 100)
+                {
+                    passScore = value;
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("合格点の入力が正しくありません。", "確認");
+                    passScore = 0;
+                }
+            }
+        }
+
+
 
 
         // ---メソッド---
