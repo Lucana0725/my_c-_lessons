@@ -22,8 +22,27 @@ namespace GradeCheck2
 
 
         // ---プロパティ---
-        // ここに定義予定
 
+        // 科目名
+        public string Name { get; set; }
+
+        // 平均点
+        public double Average
+        {
+            get { return average; }
+            set
+            {
+                if (value >= 0.0 && value <= 100.0)
+                {
+                    average = value;
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("平均点の入力が正しくありません。", "確認");
+                    average = 0.0;
+                }
+            }
+        }
 
 
 
