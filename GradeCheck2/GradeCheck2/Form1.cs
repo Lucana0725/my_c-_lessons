@@ -12,7 +12,7 @@ namespace GradeCheck2
 {
     public partial class Form1 : Form
     {
-        // 数学, 物理, 英語のインスタンスはイベントハンドラをまたいで使用するので、フィールドとして宣言しておく。
+        // -----数学, 物理, 英語のインスタンスはイベントハンドラをまたいで使用するので、フィールドとして宣言しておく。-----
         Subject subjectM;   // 数学のインスタンス
         Subject subjectP;   // 物理のインスタンス
         Subject subjectE;   // 英語のインスタンス
@@ -22,7 +22,7 @@ namespace GradeCheck2
             InitializeComponent();
         }
 
-        // フォーム1同時のイベントハンドラ
+        // -----フォーム1同時のイベントハンドラ-----
         private void Form1_Load(object sender, EventArgs e)
         {
             // フィールドとしてインスタンスを宣言していたので、ここでnewしてインスタンスを生成する。(name, average, totalHours, passScore)
@@ -54,7 +54,9 @@ namespace GradeCheck2
 
 
 
-        // 結果を表示するラベルのクリア
+
+
+        // -----結果を表示するラベルのクリア-----
         private void labelClear()
         {
             labelName.Text = "";
@@ -67,7 +69,10 @@ namespace GradeCheck2
         }
 
 
-        // "判定"ボタンクリック時のイベントハンドラ
+
+
+
+        // -----"判定"ボタンクリック時のイベントハンドラ-----
         private void buttonJudge_Click(object sender, EventArgs e)
         {
             // 得点を整数値に変換
@@ -120,13 +125,34 @@ namespace GradeCheck2
         }
 
 
-        // テキストを整数値に変換する
+
+
+
+        // -----テキストを整数値に変換する-----
         // 仮引数 => text:変換する文字列, val:変換した整数値
         private void textToValue(string text, out int val)
         {
             if (int.TryParse(text, out val) == false)
                 val = -1;
 
+        }
+
+
+
+
+
+        // -----「リセット」ボタンクリック時のイベントハンドラ-----
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            labelClear();
+
+            textBoxName.Text = "";
+            textBoxAttendanceM.Text = "0";
+            textBoxAttendanceP.Text = "0";
+            textBoxAttendanceE.Text = "0";
+            textBoxScoreM.Text = "0";
+            textBoxScoreP.Text = "0";
+            textBoxScoreE.Text = "0";
         }
     }
 }

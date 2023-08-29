@@ -385,6 +385,7 @@
             this.buttonReset.TabIndex = 34;
             this.buttonReset.Text = "リセット";
             this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // labelName
             // 
