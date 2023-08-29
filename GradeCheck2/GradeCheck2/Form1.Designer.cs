@@ -375,6 +375,7 @@
             this.buttonJudge.TabIndex = 33;
             this.buttonJudge.Text = "判定";
             this.buttonJudge.UseVisualStyleBackColor = true;
+            this.buttonJudge.Click += new System.EventHandler(this.buttonJudge_Click);
             // 
             // buttonReset
             // 

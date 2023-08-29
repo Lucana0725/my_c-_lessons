@@ -65,5 +65,68 @@ namespace GradeCheck2
             labelCompAvgP.Text = "";
             labelCompAvgE.Text = "";
         }
+
+
+        // "判定"ボタンクリック時のイベントハンドラ
+        private void buttonJudge_Click(object sender, EventArgs e)
+        {
+            // 得点を整数値に変換
+            int scoreM, scoreP, scoreE;
+            textToValue(textBoxScoreM.Text, out scoreM);
+            textToValue(textBoxScoreP.Text, out scoreP);
+            textToValue(textBoxScoreE.Text, out scoreE);
+
+
+            // 点数の範囲チェック
+            if (scoreM < 0 || scoreM > 100 ||
+                scoreP < 0 || scoreP > 100 ||
+                scoreE < 0 || scoreE > 100)
+            {
+                MessageBox.Show("得点の入力が正しくありません。", "確認");
+                return;
+            }
+
+
+            // 出席時数を整数値に変換
+            int attendanceM, attendanceP, attendanceE;
+            textToValue(textBoxAttendanceM.Text, out attendanceM);
+            textToValue(textBoxAttendanceP.Text, out attendanceP);
+            textToValue(textBoxAttendanceE.Text, out attendanceE);
+
+
+            // 出席時数の範囲をチェック
+            if (attendanceM < 0 || attendanceM > subjectM.TotalHours ||
+                attendanceP < 0 || attendanceP > subjectP.TotalHours ||
+                attendanceE < 0 || attendanceE > subjectE.TotalHours)
+            {
+                MessageBox.Show("出席時数の入力が正しくありません。", "確認");
+                return;
+            }
+
+            Student student = new Student(textBoxName.Text, scoreM, scoreP, scoreE, attendanceM, attendanceP, attendanceE);
+
+            // 名前の表示
+            labelName.Text = student.Name + "さんの成績";
+
+            // 合否判定 (subjectM.OverPass()というところで最初にフィールドとして定義したsubjectMを使用、Subject.csで定義したOverPass()がインスタンスメソッドとしてここでようやく機能する。)
+            labelResultM.Text = subjectM.OverPass(student.ScoreM, student.AttendanceM);
+            labelResultP.Text = subjectP.OverPass(student.ScoreP, student.AttendanceP);
+            labelResultE.Text = subjectE.OverPass(student.ScoreE, student.AttendanceE);
+
+            // 平均値以上か未満かを判定する
+            labelCompAvgM.Text = subjectM.OverAverage(student.ScoreM);
+            labelCompAvgP.Text = subjectP.OverAverage(student.ScoreP);
+            labelCompAvgE.Text = subjectE.OverAverage(student.ScoreE);
+        }
+
+
+        // テキストを整数値に変換する
+        // 仮引数 => text:変換する文字列, val:変換した整数値
+        private void textToValue(string text, out int val)
+        {
+            if (int.TryParse(text, out val) == false)
+                val = -1;
+
+        }
     }
 }
