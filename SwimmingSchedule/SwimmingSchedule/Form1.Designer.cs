@@ -28,25 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownYear = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMonth = new System.Windows.Forms.NumericUpDown();
             this.labelLessonDate = new System.Windows.Forms.Label();
             this.labelLessonStartTime = new System.Windows.Forms.Label();
             this.labelLessonFee = new System.Windows.Forms.Label();
             this.listBoxMenu = new System.Windows.Forms.ListBox();
             this.buttonOK = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonth)).BeginInit();
             this.SuspendLayout();
             // 
-            // numericUpDown1
+            // numericUpDownYear
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(34, 32);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(77, 19);
-            this.numericUpDown1.TabIndex = 0;
+            this.numericUpDownYear.Location = new System.Drawing.Point(34, 32);
+            this.numericUpDownYear.Maximum = new decimal(new int[] {
+            2099,
+            0,
+            0,
+            0});
+            this.numericUpDownYear.Minimum = new decimal(new int[] {
+            1920,
+            0,
+            0,
+            0});
+            this.numericUpDownYear.Name = "numericUpDownYear";
+            this.numericUpDownYear.Size = new System.Drawing.Size(77, 19);
+            this.numericUpDownYear.TabIndex = 0;
+            this.numericUpDownYear.Value = new decimal(new int[] {
+            1920,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
@@ -66,12 +81,27 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "月";
             // 
-            // numericUpDown2
+            // numericUpDownMonth
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(171, 32);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(77, 19);
-            this.numericUpDown2.TabIndex = 2;
+            this.numericUpDownMonth.Location = new System.Drawing.Point(171, 32);
+            this.numericUpDownMonth.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.numericUpDownMonth.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownMonth.Name = "numericUpDownMonth";
+            this.numericUpDownMonth.Size = new System.Drawing.Size(77, 19);
+            this.numericUpDownMonth.TabIndex = 2;
+            this.numericUpDownMonth.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // labelLessonDate
             // 
@@ -129,13 +159,14 @@
             this.Controls.Add(this.labelLessonStartTime);
             this.Controls.Add(this.labelLessonDate);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDownMonth);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numericUpDownYear);
             this.Name = "Form1";
             this.Text = "CSスイミングスクール";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonth)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,10 +174,10 @@
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDownYear;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDownMonth;
         private System.Windows.Forms.Label labelLessonDate;
         private System.Windows.Forms.Label labelLessonStartTime;
         private System.Windows.Forms.Label labelLessonFee;

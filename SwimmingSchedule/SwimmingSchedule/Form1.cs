@@ -16,5 +16,23 @@ namespace SwimmingSchedule
         {
             InitializeComponent();
         }
+
+
+        // 本日の日付を取得する
+        //DateTime now = new DateTime();
+        DateTime now = DateTime.Now;
+
+
+
+
+
+        // Form1ロード時のイベントハンドラ
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // フォーム起動時に現在の年と月をニューメリックに表示する
+            numericUpDownYear.Value = now.Year;
+            numericUpDownMonth.Value = now.Month;
+        }
     }
 }
