@@ -11,6 +11,14 @@ namespace FileIOSample
     {
         static void Main(string[] args)
         {
+            //ExistsExample();
+            //CreateDirectoryExample();
+            DeleteExample();
+        }
+
+
+        static void ExampleFileIO()
+        {
             // 文字列を全部書き込む例
             string writeText = "文字列をファイルに書き込みました。";
 
@@ -25,6 +33,7 @@ namespace FileIOSample
             {
                 Console.WriteLine(ex.Message);
             }
+
 
             // 複数の文字列を1行ずつ書き込む
             string[] writeText2 = { "続けて文字列を", "改行しながら", "書き込みます。" };
@@ -43,6 +52,99 @@ namespace FileIOSample
             {
                 Console.WriteLine(ex.Message);
             }
+
+
+
+
+
+
+            // ファイルを全部読み込む例
+            string readText = "";
+
+            try
+            {
+                using (StreamReader reader1 = new StreamReader("test1.txt", Encoding.Default))
+                {
+                    readText = reader1.ReadToEnd();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.WriteLine(readText);
+
+
+            // ファイルを1行ずつ読み込む例
+            try
+            {
+                using (StreamReader reader2 = new StreamReader("test1.txt", Encoding.Default))
+                {
+                    string line;
+                    while ((line = reader2.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
+
+
+        // Existsメソッドの例
+        static void ExistsExample()
+        {
+            //string directory = @"C:\Program Files\Microsoft Office";
+            string directory = @"C:\Program Files\BraveSoftware";
+            if (Directory.Exists(directory))
+                Console.WriteLine(directory + "ディレクトリは存在します。");
+            else
+                Console.WriteLine(directory + "ディレクトリは存在しません。");
+
+            Console.Read();
+        }
+
+
+        static void CreateDirectoryExample()
+        {
+            try
+            {
+                if (Directory.Exists("test") == false)
+                {
+                    Console.WriteLine("testディレクトリが存在しないので、作成します。");
+                    Directory.CreateDirectory("test");
+
+                    Console.Read();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.Read();
+            }
+        }
+
+
+        static void DeleteExample()
+        {
+            try
+            {
+                if (Directory.Exists("test") == true)
+                {
+                    Console.WriteLine("testディレクトリは存在するので、削除します。");
+                    Directory.Delete("test", true);
+                    Console.Read();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.Read();
+            }
+        }
+
     }
 }
