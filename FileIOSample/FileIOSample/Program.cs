@@ -13,7 +13,10 @@ namespace FileIOSample
         {
             //ExistsExample();
             //CreateDirectoryExample();
-            DeleteExample();
+            //DeleteExample();
+            //ExistsExample2();
+            CreateExample();
+            //DeleteExample2();
         }
 
 
@@ -95,7 +98,7 @@ namespace FileIOSample
 
 
         // Existsメソッドの例
-        static void ExistsExample()
+        static void ExistsExample1()
         {
             //string directory = @"C:\Program Files\Microsoft Office";
             string directory = @"C:\Program Files\BraveSoftware";
@@ -136,6 +139,61 @@ namespace FileIOSample
                 {
                     Console.WriteLine("testディレクトリは存在するので、削除します。");
                     Directory.Delete("test", true);
+                    Console.Read();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.Read();
+            }
+        }
+
+
+        static void ExistsExample2()
+        {
+            string fileName = @"C:Windows\explorer.exe";
+            if (File.Exists(fileName) == true)
+            {
+                Console.WriteLine(fileName + "は存在します。");
+                Console.Read();
+            }
+            else
+            {
+                Console.WriteLine(fileName + "は存在しません。");
+                Console.Read();
+            }
+        }
+
+
+        static void CreateExample()
+        {
+            try
+            {
+                if (File.Exists("test.txt") == false)
+                {
+                    Console.WriteLine("test.txt ファイルは存在しないので作成します。");
+                    FileStream fs = File.Create("test.txt");
+                    fs.Close();     // ファイルをクローズ(忘れないよう注意！)
+                    Console.Read();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.Read();
+            }
+        }
+
+
+        static void DeleteExample2()
+        {
+            try
+            {
+                if (File.Exists("test.txt") == true)
+                {
+                    Console.WriteLine("test.txt ファイルは存在するので削除します。");
+                    File.Delete("test.txt");
                     Console.Read();
                 }
             }
